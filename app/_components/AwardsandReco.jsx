@@ -12,10 +12,10 @@ export const AwardsandReco = () => {
     <Link href={"/"} className="bg-blue-900 mt-4 py-2 px-6 w-[160px] flex  gap-2 rounded-lg text-white">About us<span className="ms-2 mt-1"><FaArrowAltCircleRight /></span></Link>
     </div>
     <div className='grid grid-cols-2 gap-4'>
-    <div className='p-10 h-[200px] flex justify-center align-middle shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/03/logo-3.webp"} height={700} width={700} alt='...' /></div>
-    <div  className='p-10 h-[200px] flex justify-center align-middle shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/07/TE.png"} height={700} width={700} alt='...' /></div>
-    <div className='p-10 h-[200px] flex justify-center align-middle shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/03/logo-1.webp"} height={300} width={300} alt='...' /></div>
-    <div className='p-10 h-[200px] flex justify-center align-middle shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/07/ISO.png"} height={300} width={300} alt='...' /></div>
+    <div className='p-10 h-[200px] flex justify-center items-center shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/03/logo-3.webp"} height={700} width={700} alt='...' /></div>
+    <div  className='p-10 h-[200px] flex justify-center items-center shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/07/TE.png"} height={700} width={700} alt='...' /></div>
+    <div className='p-10 h-[200px] flex justify-center items-center shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/03/logo-1.webp"} height={300} width={300} alt='...' /></div>
+    <div className='p-10 h-[200px] flex justify-center items-center shadow-xl rounded-lg'><Image src={"https://knackglobal.com/wp-content/uploads/2023/07/ISO.png"} height={300} width={300} alt='...' /></div>
     </div>
     </div>
     </>

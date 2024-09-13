@@ -15,17 +15,19 @@ export default function Home() {
   };
 
   return (<>
-    <div className="md:flex gap-4 py-4 md:px-10 bg-blue-50">
-      <div className="content-center sm:px-8 px-4">
-        <h1 className="text-4xl font-bold my-10">Medical Billing Solutions for Healthcare Providers</h1>
-        <p className="pb-4">We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing.</p>
-        <Link href={"/"} className="bg-blue-900 mt-2 py-2 px-6 w-[200px] flex rounded-lg text-white">Schedule a Demo <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
-      </div>
+    <div className="bg-blue-50">
+      <div className="md:flex gap-4 py-4 md:px-10 2xl:container 2xl:mx-auto">
+        <div className="content-center sm:px-8 px-4">
+          <h1 className="text-4xl font-bold my-10">Medical Billing Solutions for Healthcare Providers</h1>
+          <p className="pb-4">We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing.</p>
+          <Link href={"/"} className="bg-blue-900 mt-2 py-2 px-6 w-[200px] flex rounded-lg text-white">Schedule a Demo <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
+        </div>
       <div className="md:mt-0 md:content-center mt-8">
         <Image src={"/img/Baner-Image-1000px.webp"} alt="..." height={1100} width={1100} />
       </div>
+      </div>
     </div>
-    <div>
+    <div className="2xl:container 2xl:mx-auto">
       <div className="text-blue-900 md:flex md:justify-center text-center py-14">
         <div className="md:w-[30%] md:mt-0 mt-10">
           <h1 className="flex-grow md:text-5xl text-3xl font-normal tracking-[1px] mb-4">750+</h1>

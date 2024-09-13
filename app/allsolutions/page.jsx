@@ -14,16 +14,21 @@ const page = () => {
   };
   return (
     <>
-    <div className=''><Heading/>
-    <OurSolutions/>
-    <Revenuecycle/>
-    <AwardsandReco/>
-    <GetanExpert 
-        backgroundImage={expertData.backgroundImage} 
-        title={expertData.title} 
-        description={expertData.description} 
-        link={expertData.link} 
-      />
+    <div>
+      <div className='bg-blue-50'>
+        <Heading/>
+      </div>
+      <div className='2xl:container 2xl:mx-auto'>
+      <OurSolutions/>
+      <Revenuecycle/>
+      <AwardsandReco/>
+      <GetanExpert 
+          backgroundImage={expertData.backgroundImage} 
+          title={expertData.title} 
+          description={expertData.description} 
+          link={expertData.link} 
+        />
+      </div>
     </div>
   
     </>

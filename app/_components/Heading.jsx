@@ -5,8 +5,8 @@ import { FaArrowAltCircleRight } from "react-icons/fa";
 const Heading = () => {
   return (
     <>
-   <div className="md:flex gap-4 py-4 md:px-10 bg-blue-50">
-      <div className="content-center px-8">
+   <div className="md:flex gap-4 py-4 md:px-10 2xl:container 2xl:mx-auto">
+      <div className="content-center sm:px-8 px-3">
         <h1 className="text-4xl font-bold my-10">
     Comprehensive Revenue Cycle Management​
     </h1>

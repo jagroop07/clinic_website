@@ -7,7 +7,7 @@ import { SlCalender } from "react-icons/sl";
 import Image from 'next/image';
 const Revenuecycle = () => {
   return (
-    <><div className='bg-gray-200 p-7 mt-10'>
+    <><div className='bg-gray-200 sm:p-7 py-7 px-3 mt-10'>
     <div >
     <h1 className='font-bold text-3xl'>Our Revenue cycle indigator</h1>
     <p className='mt-8'>We utilize a comprehensive set of indicators to measure the efficiency and effectiveness of your revenue cycle processes. These indicators include metrics such as days in accounts receivable, clean claims rate, denial rate, net collection percentage, and average reimbursement time. By closely monitoring these indicators, we gain valuable insights into the performance of our RCM processes, identify areas for improvement, and ensure optimal revenue recovery for our clients.</p>
