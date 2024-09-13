@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Clients from "./_components/Clients";
 import GetanExpert from "./_components/GetanExpert";
+import Testimonials from "./_components/Testimonials";
 
 export default function Home() {
   const expertData = {
@@ -163,25 +164,8 @@ export default function Home() {
           <h1 className="text-4xl font-bold">TRUSTED BY</h1>
           <h5 className="text-sm text-gray-700 my-3">750+ MEDICAL PRACTICES SERVED</h5>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 sm:px-10 px-3 mt-12">
-          <div className="p-6 flex flex-col shadow-[rgba(0,0,0,0.24)_0px_3px_8px] bg-white rounded-lg items-center">
-            <Image src={"/img/testi-2-1.webp"} alt="..." height={150} width={150} />
-            <p className="text-center my-3 text-gray-600">During this pandemic and period of lockdown, Knack not only demonstrated their proactive approach to ensuring uninterrupted service delivery but also provide transparency in communication throughout, a true testament to the partnership we have built with Knack over the years.</p>
-            <h4 className="font-semibold my-8">VP, RCM Operations</h4>
-            <p className="text-sm text-gray-400">@publicly traded EMR software provider</p>
-          </div>
-          <div className="p-6 flex flex-col shadow-[rgba(0,0,0,0.24)_0px_3px_8px] bg-white rounded-lg items-center">
-            <Image src={"/img/testi-1.webp"} alt="..." height={150} width={150} />
-            <p className="text-center my-3 text-gray-600">I am really excited about our partnership in Accounts Receivable and I believe we are making the right decision to contribute to our success in Accounts Receivable.</p>
-            <h4 className="font-semibold my-8">VP, RCM Operations</h4>
-            <p className="text-sm text-gray-400">@publicly traded EMR software provider</p>
-          </div>
-          <div className="p-6 flex flex-col shadow-[rgba(0,0,0,0.24)_0px_3px_8px] bg-white rounded-lg items-center">
-            <Image src={"/img/testi-2.webp"} alt="..." height={150} width={150} />
-            <p className="text-center my-3 text-gray-600">The Knack team is an asset to our organization. Thanks again for being great partners, and a huge thank you to the teams for working endlessly.</p>
-            <h4 className="font-semibold my-8">Sr Director of Operations</h4>
-            <p className="text-sm text-gray-400">@publicly traded EMR software provider</p>
-          </div>
+        <div className="lg:px-12 md:px-5 px-2 py-12">
+          <Testimonials/>
         </div>
       </div>
       <div>
