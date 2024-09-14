@@ -16,7 +16,8 @@ const page = () => {
     <>
     <div>
       <div className='bg-blue-50'>
-        <Heading/>
+        <Heading heading="	
+Comprehensive Revenue Cycle Management" subheading={"We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing."} link={"/"} linktext={"contact us"} imagelink="/img/hero-image-1536x1159.png"/>
       </div>
       <div className='2xl:container 2xl:mx-auto'>
       <OurSolutions/>
