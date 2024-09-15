@@ -42,7 +42,7 @@ const LoadingComponent = () => {
   }
 
   return (<>   <div className='bg-blue-50'>
-        <Heading link={""} linktext={"Contact us"} heading={`Case Study:${caseStudy.case_title}`} subheading={caseStudy.case_description} imagelink={caseStudy.case_coverImage}/>
+        <Heading link="/contactus" linktext={"Contact us"} heading={`Case Study:${caseStudy.case_title}`} subheading={caseStudy.case_description} imagelink={caseStudy.case_coverImage}/>
     </div>
     <div className='flex flex-col gap-10'>
         {caseStudy.case_section.map((e, index) => (
@@ -71,7 +71,6 @@ const LoadingComponent = () => {
       </div>
       <AwardsandReco/>
       <WhoWeAssist/>
-      <GetanExpert/>
     </>
  
     
