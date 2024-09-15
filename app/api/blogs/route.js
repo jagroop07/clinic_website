@@ -8,7 +8,8 @@ export const GET = async (req) => {
         const caseStudy = await CaseStudy.find()
         return NextResponse.json({ message: "success", caseStudy })
     } catch (error) {
-        return NextResponse.json({error: error.message})
+        console.log(error.message)
+        return NextResponse.json({message: "error occured", error})
     }
 }
 
