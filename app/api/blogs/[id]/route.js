@@ -22,3 +22,20 @@ export const DELETE = async (req, {params}) => {
         return NextResponse.json({message: "error occured", error})
     }
 }
+
+export const GET = async (req, {params} )  => {
+    try {
+        let {id} = params
+        await dbConnect()
+
+        const caseInfoSingle = await CaseStudy.findById(id)
+
+        if(!caseInfoSingle){
+            return NextResponse.json({status: 400, message: "No feedback yet"})
+        }
+
+        return NextResponse.json({message: "success", singleCase: caseInfoSingle})
+    } catch (error) {
+        return NextResponse.json({message: "error occured", error: error.message})
+    }
+}
