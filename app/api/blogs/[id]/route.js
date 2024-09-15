@@ -6,7 +6,7 @@ export const DELETE = async (req, {params}) => {
     try {
         const {id} = params
         await dbConnect()
-
+        
         if(!id){
             return NextResponse.json({status: 404, error: "id is missing"})
         }
