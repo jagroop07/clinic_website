@@ -8,7 +8,7 @@ export const GET = async (req) => {
         const caseStudy = await CaseStudy.find()
         return NextResponse.json({ message: "success", caseStudy })
     } catch (error) {
-        return NextResponse.json({message: "error occured", error})
+        return NextResponse.json({error: error.message})
     }
 }
 
@@ -19,6 +19,6 @@ export const POST = async (req) => {
         const caseInfo = await CaseStudy.create(data)
         return NextResponse.json({ message: "caseStudy created successfully", caseInfo })
     } catch (error) {
-        return NextResponse.json({message: "error occured", error})
+        return NextResponse.json({error: error.message})
     }
 }
