@@ -8,8 +8,8 @@ import { TrustedAndClients } from "../_components/TrustedAndClients";
 
 export default function ScheduleDemo() {
     return (
-        <>
-            <div className="lg:grid lg:grid-cols-2 sm:px-10 px-3 gap-5 text-white py-10 bg-gray-200 bg-[url('/img/demo_background.png')] bg-cover bg-center">
+        <div className="2xl:container 2xl:mx-auto">
+            <div className="lg:grid lg:grid-cols-2 sm:px-10 px-3 gap-5 text-white sm:py-16 py-10 bg-gray-200 bg-[url('/img/demo_background.png')] bg-cover bg-center">
                 <div className="sm:p-6 p-3">
                     <h1 className="text-4xl font-semibold">Interested in learning more about AI.BOT Technology?</h1>
                     <p className="text-gray-400 my-3">Fill out the form and a Knack expert will get in touch about your practice assessment. </p>
@@ -47,6 +47,6 @@ export default function ScheduleDemo() {
             <TrustedAndClients/>
             <TrustedBy/>
             <Solutions/>
-        </>
+        </div>
     )
 }
