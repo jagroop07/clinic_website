@@ -21,7 +21,9 @@ Comprehensive Revenue Cycle Management" subheading={"We provide comprehensive te
       </div>
       <div className='2xl:container 2xl:mx-auto'>
       <OurSolutions/>
-      <Revenuecycle/>
+      <div className='sm:px-6'>
+        <Revenuecycle/>
+      </div>
       <AwardsandReco/>
       <GetanExpert 
           backgroundImage={expertData.backgroundImage} 
