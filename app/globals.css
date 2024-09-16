@@ -5,3 +5,17 @@
 .slider .swiper-wrapper{
   padding-bottom: 40px;
 }
+
+@media screen and (max-width: 1024px) {
+  .aboutSlider .swiper-wrapper{
+    height: 70vh;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .aboutSlider .swiper-wrapper{
+    height: 30vh;
+    padding-bottom: 20px;
+  }
+}
