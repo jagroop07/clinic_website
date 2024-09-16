@@ -4,12 +4,9 @@ import { useParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Heading from '@/app/_components/Heading';
-import { FaArrowAltCircleRight } from 'react-icons/fa';
 import Image from 'next/image';
-import Link from 'next/link';
 import { AwardsandReco } from '@/app/_components/AwardsandReco';
 import { WhoWeAssist } from '@/app/_components/WhoWeAssist';
-import GetanExpert from '@/app/_components/GetanExpert';
 
 const LoadingComponent = () => {
   const { id } = useParams();

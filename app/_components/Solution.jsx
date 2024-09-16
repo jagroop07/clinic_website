@@ -2,9 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { GiCheckedShield } from "react-icons/gi";
-import { BiSolidCheckboxChecked } from 'react-icons/bi'
 import { FaArrowAltCircleRight } from 'react-icons/fa'
-import { MdPayment } from 'react-icons/md'
 
 const Solution = ({heading,p1,p2,imagelink}) => {
   return (
