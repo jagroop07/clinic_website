@@ -7,6 +7,7 @@ const solutionSchema = new mongoose.Schema({
         button_link: String,
         solution_first: {
             solution_title: String,
+            solution_image: String,
             solution_points: [String],
             button_text: String,
             button_link: String
