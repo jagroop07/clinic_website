@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export const ContactForm = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
@@ -9,10 +10,11 @@ export const ContactForm = () => {
     const formhandle = async(data) => {
         try {
             console.log(data)
-            const contactInfo = await axios.post('http://localhost:3000/api/contact', data)
-            console.log(contactInfo.data)
+            await axios.post('http://localhost:3000/api/contact', data)
+            toast.success("Form Submitted")
             reset()
         } catch (error) {
+            toast.error("Something went Wrong")
             console.log({error: error.message})
         }
     }

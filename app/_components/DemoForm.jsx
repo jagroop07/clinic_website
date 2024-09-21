@@ -2,16 +2,18 @@
 
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export const DemoForm = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm()
 
     const formhandle = async(data) => {
         try {
-            const demoInfo = await axios.post('http://localhost:3000/api/demo', data)
-            console.log(demoInfo.data)
+            await axios.post('http://localhost:3000/api/demo', data)
+            toast.success("Demo Scheduled")
             reset()
         } catch (error) {
+            toast.error("something went wrong")
             console.log({error: error.message})
         }
     }
