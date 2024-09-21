@@ -28,15 +28,15 @@ export default async function CaseStudiesPage() {
           imagelink={"/img/hero-image-1536x1159.png"}
         />
       </div>
-      <div className='flex flex-col gap-10'>
+      <div className='flex flex-col gap-10 py-12'>
         {caseStudies.map((e, index) => (
           <div
             key={e._id}
-            className={`flex p-3 flex-col ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-center gap-5 align-middle`}
+            className={`flex p-3 flex-col ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-center gap-x-16 align-middle`}
           >
             <div className='flex justify-center align-center'>
               <Image 
-                className='lg:w-[500px] mt-7' 
+                className='lg:w-[500px] mt-7 rounded-tl-[80px] rounded-br-[80px]' 
                 width={500} 
                 height={500} 
                 alt={e.case_title} 
@@ -44,11 +44,11 @@ export default async function CaseStudiesPage() {
               />
             </div>
             <div className='content-center lg:w-[40%]'>
-              <h1 className='font-black text-3xl'>{e.case_title}</h1>
-              <div className='mt-6 text-xl'>
+              <h1 className='font-black text-3xl'><span className='text-blue-900 mb-3'>Case Study :</span> <span className='border-b-0 font-semibold'>{e.case_title}</span></h1>
+              <div className='mt-6 text-lg text-gray-500'>
                 {e.case_description}
               </div>
-              <Link href={`/casestudies/${e._id}`} className="bg-blue-900 mt-4 py-2 px-6 w-[160px] flex gap-2 rounded-lg text-white">
+              <Link href={`/casestudies/${e._id}`} className="bg-blue-900 mt-8 py-2 px-6 w-[160px] flex gap-2 rounded-lg text-white">
                 Read more
                 <span className="ms-2 mt-1"><FaArrowAltCircleRight /></span>
               </Link>

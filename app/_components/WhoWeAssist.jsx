@@ -5,7 +5,7 @@ import { FaArrowCircleRight } from "react-icons/fa";
 export const WhoWeAssist = () => {
     return (
         <>
-            <div className="md:flex py-16 bg-blue-100 px-6">
+            <div className="md:flex py-16 bg-blue-100 md:px-6 px-2">
                 <div className="md:max-w-[50%] md:mt-0 mt-10 sm:px-8">
                     <h5 className="text-base font-semibold text-red-600 my-4">Knack Global</h5>
                     <h1 className="text-4xl font-bold">Who We Assist​</h1>
