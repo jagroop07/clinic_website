@@ -11,7 +11,6 @@ import { WhoWeAssist } from '@/app/_components/WhoWeAssist';
 const LoadingComponent = () => {
   const { id } = useParams();
   const [caseStudy, setCaseStudy] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -22,26 +21,21 @@ const LoadingComponent = () => {
       } catch (err) {
         console.error('Error fetching case studies:', err);
         setError('Failed to fetch case studies');
-      } finally {
-        setLoading(false);
       }
     };
 
     fetchCaseStudy();
   }, [id]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
   if (error) {
     return <div>{error}</div>;
   }
 
-  return (<>   <div className='bg-gray-50'>
-        <Heading link="/contactus" linktext={"Contact us"} heading={<h1><span className='text-blue-900 mb-3'>Case Study :</span> <span className='border-b-0 font-semibold'>{caseStudy.case_title}</span></h1>} subheading={caseStudy.case_description} imagelink={caseStudy.case_coverImage}/>
+  return (
+     caseStudy && <>  <div className='bg-gray-50'>
+      <Heading link="/contactus" linktext={"Contact us"} heading={<h1><span className='text-blue-900 mb-3'>Case Study :</span> <span className='border-b-0 font-semibold'>{caseStudy.case_title}</span></h1>} subheading={caseStudy.case_description} imagelink={caseStudy.case_coverImage} />
     </div>
-    <div className='flex flex-col px-2 py-16 gap-10'>
+      <div className='flex flex-col px-2 py-16 gap-10'>
         {caseStudy.case_section.map((e, index) => (
           <div
             key={e._id}
@@ -55,21 +49,18 @@ const LoadingComponent = () => {
             </div>
             <div className='flex justify-center align-center'>
               <Image
-                className='lg:w-[500px] mt-7' 
-                width={500} 
-                height={500} 
-                alt={e.section_title} 
+                className='lg:w-[500px] mt-7'
+                width={500}
+                height={500}
+                alt={e.section_title}
                 src={e.section_image}
               />
             </div>
           </div>
         ))}
       </div>
-      <AwardsandReco color={"bg-gray-100"}/>
-      <WhoWeAssist />
-    </>
- 
-    
+      <AwardsandReco color={"bg-gray-100"} />
+      <WhoWeAssist /> </>
   );
 };
 

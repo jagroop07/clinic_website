@@ -28,22 +28,22 @@ export default async function CaseStudiesPage() {
           imagelink={"/img/hero-image-1536x1159.png"}
         />
       </div>
-      <div className='flex flex-col gap-10 py-12'>
+      <div className='flex flex-col gap-y-10 px-2 py-12'>
         {caseStudies.map((e, index) => (
           <div
             key={e._id}
-            className={`flex p-3 flex-col ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-center gap-x-16 align-middle`}
+            className={`flex pt-3 flex-col ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-center gap-x-16 align-middle`}
           >
             <div className='flex justify-center align-center'>
               <Image 
-                className='lg:w-[500px] mt-7 rounded-tl-[80px] rounded-br-[80px]' 
+                className='lg:w-[500px] mt-7 sm:rounded-tl-[80px] sm:rounded-br-[80px]' 
                 width={500} 
                 height={500} 
                 alt={e.case_title} 
                 src={e.case_coverImage}
               />
             </div>
-            <div className='content-center lg:w-[40%]'>
+            <div className='content-center lg:w-[40%] lg:mt-0 mt-6'>
               <h1 className='font-black text-3xl'><span className='text-blue-900 mb-3'>Case Study :</span> <span className='border-b-0 font-semibold'>{e.case_title}</span></h1>
               <div className='mt-6 text-lg text-gray-500'>
                 {e.case_description}
