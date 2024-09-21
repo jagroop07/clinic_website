@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 
 const solutionSchema = new mongoose.Schema({
         solution_title: String,
-        solution_coverImage: String,
         solution_description: String,
         button_text: String,
         button_link: String,
