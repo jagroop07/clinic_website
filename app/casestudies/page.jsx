@@ -3,6 +3,8 @@ import Link from 'next/link';
 import axios from 'axios';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import Heading from '../_components/Heading';
+import { WhoWeAssist } from '../_components/WhoWeAssist';
+import { AwardsandReco } from '../_components/AwardsandReco';
 
 // Async function to fetch case studies using axios
 async function getCaseStudies() {
@@ -56,6 +58,8 @@ export default async function CaseStudiesPage() {
           </div>
         ))}
       </div>
+      <AwardsandReco/>
+      <WhoWeAssist/>
     </>
   );
 }

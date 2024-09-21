@@ -7,12 +7,11 @@ import { MdPayment } from "react-icons/md";
 const OurSolutions = () => {
   return (
     <>
-    <div className='p-4 mt-20'> <h1 className='text-5xl font-bold text-center text-blue-900'>Our Solutions</h1>
-    <p className='mt-5 text-center text-xl'>Since 2007, Knack Global has partnered with leading healthcare practitioners to streamline billing, accelerate payments, and remove barriers between patients and providers.</p>
+    <div className='p-4 mt-20'> <h1 className='text-5xl font-bold text-center text-blue-900'>After Service</h1>
+    <p className='mt-5 text-center text-xl'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quam necessitatibus eligendi libero distinctio unde cupiditate beatae, praesentium ut dicta!</p>
     <div className='solutions'>
-        {/* sol1 */}
         
-        {/* sol2 */}
+        
         <div className='md:flex md:flex-row-reverse justify-center gap-5 align-middle'>
             <div className='flex justify-center align-center'><Image className='md:w-[500px] mt-7' width={500} height={500} alt='...' src={"https://knackglobal.com/wp-content/uploads/2023/05/image_Medical-Coding-Services-768x664.png"}/></div>
             <div className='content-center md:w-[40%]'>

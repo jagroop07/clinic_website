@@ -42,7 +42,7 @@ export default () => {
                 modules={[Pagination, Scrollbar]}
                 spaceBetween={50}
                 slidesPerView={1}
-                navigation
+                
                 pagination={{ clickable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}

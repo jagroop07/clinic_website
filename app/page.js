@@ -19,7 +19,7 @@ export default function Home() {
   const headingInfo = {
     heading: "Medical Billing Solutions for Healthcare Providers",
     subheading: "We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing.",
-    link: '/',
+    link: '/scheduleDemo',
     linktext: 'Schedule a Demo',
     imagelink: '/img/Baner-Image-1000px.webp'
   }
@@ -35,7 +35,7 @@ export default function Home() {
           <h5 className="text-base font-semibold text-red-600">Knack Global</h5>
           <h1 className="text-4xl font-bold">Why Knack</h1>
           <p className="mt-6 text-gray-500">Knack helps healthcare organizations to optimize their revenue streams while minimizing administrative costs and improving patient satisfaction. Our experienced team of professionals understand the complexities of healthcare billing, Payer policies and reimbursement processes, this helps in improving our Healthcare Partner’s financial performance.</p>
-          <Link href={"/"} className="bg-blue-900 mt-6 py-2 px-6 w-[200px] flex rounded-sm text-white">Schedule a Demo <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
+          <Link href={"/scheduleDemo"} className="bg-blue-900 mt-6 py-2 px-6 w-[200px] flex rounded-sm text-white">Schedule a Demo <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
         <div className="md:grid md:grid-cols-2 md:gap-8">
           <div className="p-8 shadow-[rgba(0,0,0,0.24)_0px_3px_8px] rounded-lg md:mt-0 mt-7">

@@ -17,7 +17,7 @@ const LoadingComponent = () => {
     const fetchCaseStudy = async () => {
       try {
         const response = await axios.get(`http://localhost:3000/api/blogs/${id}`);
-        setCaseStudy(response.data.singleCase);
+        setCaseStudy(response.data?.singleCase);
       } catch (err) {
         console.error('Error fetching case studies:', err);
         setError('Failed to fetch case studies');
