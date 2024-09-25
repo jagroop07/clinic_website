@@ -34,7 +34,7 @@ const page = async ({ params }) => {
             points={solution?.solution_first.solution_points}
             imagelink={solution?.solution_first.solution_image}
           />
-          <div className=" flex flex-col items-center justify-center">
+          <div className=" flex mt-10 flex-col items-center justify-center">
            
           {solution?.solution_section.map((e, i) => (
             <Singlesolution key={i} index={i} data={e} />
@@ -43,7 +43,8 @@ const page = async ({ params }) => {
          
           </div>
           </div>
-          <GetanExpert/>
+          {/* <GetanExpert/> */}
+          <AwardsandReco/>
           <WhoWeAssist/>
         </>
       }

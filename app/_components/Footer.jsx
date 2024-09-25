@@ -7,8 +7,20 @@ import { FaFacebook } from "react-icons/fa";
 import { FaTelegram } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa6";
+import axios from "axios";
+async function getsolutions() {
+    try {
+      const response = await axios.get('http://localhost:3000/api/solutions');
 
-export const Footer = () => {
+      return response.data.solutions; // Adjust according to your API structure
+    
+    } catch (error) {
+      console.error('Error fetching solutions:', error);
+      throw new Error('Failed to fetch solutions');
+    }
+  }
+export const Footer = async() => {
+    const solutions=await getsolutions()
     return <div className="bg-[#004366] sm:px-10 px-2 2xl:px-0 pt-14 pb-7">
         <div className="2xl:container 2xl:mx-auto grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-5">
             <div className="lg:col-span-2">
@@ -28,14 +40,11 @@ export const Footer = () => {
             <div>
                 <div className="flex items-center">
                     <div className="h-[5px] w-[16px] rounded-lg bg-primary"></div>
-                    <h2 className="text-white font-semibold ms-3 mt-4 sm:mt-0">Product Category</h2>
+                    <h2 className="text-white font-semibold ms-3 mt-4 sm:mt-0">Our solutions</h2>
                 </div>
                 <div className="text-gray-400 text-sm">
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Multi-Function Printers</Link>
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Lasers Printers</Link>
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Production Printers</Link>
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Wide Format MFPs</Link>
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> More ...</Link>
+                    {solutions.map((e,i)=><Link href={`/allsolutions/${e._id}`} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> {e.solution_title}</Link>
+)}
                 </div>
             </div>
             <div>
@@ -44,9 +53,9 @@ export const Footer = () => {
                     <h2 className="text-white font-semibold ms-3">Usefull Links</h2>
                 </div>
                 <div className="text-gray-400 text-sm">
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Support</Link>
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> About Us</Link>
-                    <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Contact Us</Link>
+                    <Link href={'/scheduleDemo'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Schedule a demo</Link>
+                    <Link href={'/about'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Company</Link>
+                    <Link href={'/contact'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Contact Us</Link>
                     <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Terms & Conditions</Link>
                     <Link href={'/'} className="flex items-center my-3"><span className="me-3"><FaChevronRight /></span> Privacy Policy</Link>
                 </div>

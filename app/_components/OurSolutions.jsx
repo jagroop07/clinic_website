@@ -19,7 +19,6 @@ async function getsolutions() {
   }
 const OurSolutions = async() => {
    const solutions=await getsolutions()
-    console.log(solutions)
   return (
     
     <>
