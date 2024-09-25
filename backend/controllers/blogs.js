@@ -9,7 +9,7 @@ export const getCaseStudy = async (id) => {
       return null;
     }
 
-    console.log("===hello")
+
     const caseInfoSingle = await caseStudy.findById(id);
 
     return caseInfoSingle;
