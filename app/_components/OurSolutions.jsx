@@ -38,11 +38,11 @@ const OurSolutions = async() => {
 {e.solution_first.solution_title}
 </p></div>
                 <div className='mt-6'>
-                    {e.solution_first?.solution_points.map((e,i)=>                    <div key={i} className='flex my-4'><span><BiSolidCheckboxChecked className='h-8 w-8 text-blue-900' /></span><p className='ms-4 content-center text-sm'>	{e}</p></div>
+                    {e.solution_first?.solution_points.map((e,i)=><div key={i} className='flex my-4'><span><BiSolidCheckboxChecked className='h-8 w-8 text-blue-900' /></span><p className='ms-4 content-center text-sm'>	{e}</p></div>
 )}
                     
                 </div>
-                <Link href={"/"} className="bg-blue-900 mt-4 py-2 px-6 w-[160px] flex  gap-2 rounded-lg text-white">Read more<span className="ms-2 mt-1"><FaArrowAltCircleRight /></span></Link>
+                <Link href={`/allsolutions/${e._id}`} className="bg-blue-900 mt-4 py-2 px-6 w-[160px] flex  gap-2 rounded-lg text-white">Read more<span className="ms-2 mt-1"><FaArrowAltCircleRight /></span></Link>
 
             </div>
         </div>)}

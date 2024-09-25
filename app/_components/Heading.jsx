@@ -15,9 +15,10 @@ const Heading = ({heading,subheading,link,linktext,imagelink}) => {
           <Link href={link} className="bg-blue-900 mt-2 py-2 px-6 flex gap-2 rounded-lg text-white">{linktext}<span className="ms-2 mt-1"><FaArrowAltCircleRight /></span></Link>
         </div>
       </div>
-      <div className="md:mt-0 flex justify-center md:content-center mt-8">
+      {imagelink?<div className="md:mt-0 flex justify-center md:content-center mt-8">
         <Image className='' src={imagelink} alt="..." height={700} width={700} />
-      </div>
+      </div>:""}
+      
     </div>
     </>
   )
