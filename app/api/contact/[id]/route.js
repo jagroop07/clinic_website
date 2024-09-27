@@ -17,7 +17,7 @@ export const DELETE = async(req, {params}) => {
             return NextResponse.json({status: 404, message: "contact not found"})
         }
 
-        return NextResponse.json({message: "contact deleted successfully"})
+        return NextResponse.json({message: "contact deleted successfully", contactDeleted})
     } catch (error) {
         return NextResponse.json({status: 400, error: error.message})
     }

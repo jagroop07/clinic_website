@@ -17,7 +17,7 @@ export const DELETE = async(req, {params}) => {
             return NextResponse.json({status: 404, message: "demo not found"})
         }
 
-        return NextResponse.json({message: "demo deleted successfully"})
+        return NextResponse.json({message: "demo deleted successfully", demoDeleted})
     } catch (error) {
         return NextResponse.json({error: error.message})
     }

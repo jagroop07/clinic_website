@@ -19,3 +19,13 @@
     padding-bottom: 20px;
   }
 }
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #414398;
+}

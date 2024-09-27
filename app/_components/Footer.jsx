@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link";
 import { GoDotFill } from "react-icons/go";
@@ -8,6 +10,7 @@ import { FaTelegram } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaChevronRight } from "react-icons/fa6";
 import axios from "axios";
+import { usePathname } from "next/navigation";
 async function getsolutions() {
     try {
       const response = await axios.get('http://localhost:3000/api/solutions');
@@ -20,11 +23,13 @@ async function getsolutions() {
     }
   }
 export const Footer = async() => {
+    const pathname = usePathname()
     const solutions=await getsolutions()
-    return <div className="bg-[#004366] sm:px-10 px-2 2xl:px-0 pt-14 pb-7">
+    
+    return !pathname.startsWith('/admin') && <div className="bg-[#004366] sm:px-10 px-2 2xl:px-0 pt-14 pb-7">
         <div className="2xl:container 2xl:mx-auto grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-5">
             <div className="lg:col-span-2">
-                <div className="flex  mb-8 gap-5 items-center">
+                <div className="flex mb-8 gap-5 items-center">
                     <Image src={'/img/logo-no-background.png'} alt="..." height={200} width={200}/>
                 </div>
                 <p className="text-gray-400 text-sm my-3">Our activities in the oil and petrochemical sector, engineering, construction, and production of lubricants date back to 25 years ago An activity that continues to grow and develop through the design and implementation of various projects</p>
