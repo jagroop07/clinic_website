@@ -19,7 +19,7 @@ export default function NavbarProductsList() {
 
   return (
     <>
-      <div className=" flex gap-6 p-2">
+      <div className=" flex gap-6 p-2 relative z-50 bg-white">
         {solutions?.map((e, i) => (
           <div
             className="w-[150px]  bg-blue-50 h-[130px] rounded-xl    "
