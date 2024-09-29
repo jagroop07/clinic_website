@@ -6,6 +6,11 @@ const nextConfig = {
           {
             protocol: 'https',
             hostname: 'knackglobal.com',
+          },
+          {
+            protocol: 'http',
+            hostname: 'localhost',
+            port: '3000'
           }
         ],
       },

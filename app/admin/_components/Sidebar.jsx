@@ -115,7 +115,7 @@ export default function Sidebar({children}) {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', backgroundColor: '#f2f4f5' }}>
       <CssBaseline />
       <AppBar position="fixed" style={{backgroundColor: '#241370'}} open={open}>
         <Toolbar>
@@ -146,7 +146,7 @@ export default function Sidebar({children}) {
         </DrawerHeader>
         <Divider />
         <List>
-          {[{text: 'Contacts', link: '/admin/contact', icon: <ContactPhoneRounded/>}, {text:'Scheduled Demos', link: "/admin/scheduleDemo", icon: <DeveloperModeRounded/>}, {text: 'Solutions', link: "/", icon: <CastForEducationSharp/>}, {text: 'Case Studies',link: "/", icon: <CasesOutlined/>}].map((item, index) => (
+          {[{text: 'Contacts', link: '/admin/contact', icon: <ContactPhoneRounded/>}, {text:'Scheduled Demos', link: "/admin/scheduleDemo", icon: <DeveloperModeRounded/>}, {text: 'Solutions', link: "/admin/solutions", icon: <CastForEducationSharp/>}, {text: 'Case Studies',link: "/admin/blogs", icon: <CasesOutlined/>}].map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display: 'block' }}>
               <Link className={`${pathname === item.link? 'bg-blue-100 text-blue-800': ''} flex py-6 px-5`} href={item.link}
                 sx={[

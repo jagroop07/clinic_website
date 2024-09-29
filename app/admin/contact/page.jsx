@@ -81,7 +81,7 @@ export default function ContactPage() {
         }
     ];
     return (
-        <Paper sx={{ height: "82dvh", width: '100%' }}>
+        <Paper sx={{ height: "82dvh", width: '100%', borderRadius: 0 }}>
             <DataGrid
                 rows={rows}
                 columns={columns}

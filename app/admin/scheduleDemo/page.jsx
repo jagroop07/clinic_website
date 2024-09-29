@@ -102,7 +102,7 @@ export default function DemoPage() {
         }
     ];
     return (
-        <Paper sx={{ height: "82dvh", width: '100%' }}>
+        <Paper sx={{ height: "82dvh", width: '91dvw' }}>
             <DataGrid
                 rows={rows}
                 columns={columns}
