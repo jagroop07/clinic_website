@@ -43,7 +43,7 @@ export const Solutions = () => {
                     <h5 className="text-base font-semibold text-red-600">Knack Global</h5>
                     <h1 className="text-4xl font-bold">Our Solutions</h1>
                     <p className="mt-6 text-gray-600">From claims processing and denial management to accurate coding and efficient billing, our solutions are tailored to optimize your financial performance. Additionally, our provider credentialing services ensure that your healthcare organization meets all regulatory requirements, enabling smooth operations and enhanced credibility.</p>
-                    <Link href={"/"} className="bg-blue-900 mt-6 py-2 ps-3 w-[200px] flex rounded-sm text-white">Browse our Solutions <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
+                    <Link href={"/allsolutions"} className="bg-blue-900 mt-6 py-2 ps-3 w-[200px] flex rounded-sm text-white">Browse our Solutions <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
                 </div>
             </div>
         </>

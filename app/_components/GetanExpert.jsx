@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const GetanExpert = ({ backgroundImage, title, description, link }) => {
+const GetanExpert = ({ backgroundImage, title, description }) => {
   return (
     <div
       className="relative overflow-hidden bg-cover bg-center bg-no-repeat py-24 px-4 sm:px-6 lg:px-8"
@@ -17,7 +17,7 @@ const GetanExpert = ({ backgroundImage, title, description, link }) => {
           {description}
         </p>
         <div className="mt-10">
-          <Link href={link} className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-lg font-semibold">
+          <Link href={'/scheduleDemo'} className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-lg font-semibold">
             Expert Assessment
             <span className="ml-2">→</span>
           </Link>

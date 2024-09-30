@@ -3,6 +3,7 @@ import { GoDotFill } from "react-icons/go";
 import { GiJourney } from "react-icons/gi";
 import { GoGoal } from "react-icons/go";
 import Clients from "../_components/Clients";
+import Link from "next/link";
 import { AwardsandReco } from "../_components/AwardsandReco";
 import GetanExpert from "../_components/GetanExpert";
 import { BiSolidArrowFromLeft } from "react-icons/bi";
@@ -93,10 +94,10 @@ export default function AboutUs() {
                 </div>
             </div>
             <div className="bg-[#004366] grid md:grid-cols-2 grid-cols-1">
-                <div className="text-white md:p-24 p-6">
+                <div className="text-white flex flex-col items-start md:p-24 p-6">
                     <h4 className="text-sm font-semibold">Knack Global</h4>
                     <h2 className="text-5xl font-semibold my-5 pb-4">Our new Jaipur Location</h2>
-                    <button className="flex items-center gap-5 px-5 py-3 my-3 font-semibold rounded-lg bg-white text-blue-900">Contact Us <span><BiSolidArrowFromLeft /></span></button>
+                    <Link href={'/contact'} className="flex items-center gap-5 px-5 py-3 my-3 font-semibold rounded-lg bg-white text-blue-900">Contact Us <span><BiSolidArrowFromLeft /></span></Link>
                 </div>
                 <div className="md:h-auto h-[300px]">
                     <iframe height={"100%"} width={"100%"} src="https://www.youtube.com/embed/rNCfjOH8Nvc?si=wR2a-DcaDfzNgLbF" frameborder="0" allow="encrypted-media; gyroscope;" referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -124,13 +125,11 @@ export default function AboutUs() {
                 <div className="flex md:flex-row flex-col gap-7 my-6">
                     <div className="bg-gray-100 sm:px-5 px-2 py-3 rounded-xl">
                         <h3 className="font-semibold text-3xl my-4">Our Solutions</h3>
-                        <p>From claims processing and denial management to accurate coding and efficient billing, our solutions are tailored to optimize your financial performance. Additionally, our provider credentialing services ensure that your healthcare organization meets all regulatory requirements, enabling smooth operations and enhanced credibility.</p>
-                        <button className="text-white my-4 bg-blue-900 flex items-center gap-4 py-3 px-5 rounded-lg">Learn More <span><BiSolidArrowFromLeft className="text-white"/></span></button>
+                        <p className="mb-4">From claims processing and denial management to accurate coding and efficient billing, our solutions are tailored to optimize your financial performance. Additionally, our provider credentialing services ensure that your healthcare organization meets all regulatory requirements, enabling smooth operations and enhanced credibility.</p>
                     </div>
                     <div className="bg-gray-100 px-5 py-3 rounded-xl">
                         <h3 className="text-3xl font-semibold my-4">Who we serve</h3>
-                        <p>We proudly serve a diverse range of healthcare organizations for their Revenue Cycle Management (RCM) and provider credentialing needs. Whether you’re a hospital, medical practice, healthcare facility, or billing company, our tailored solutions are designed to meet your unique requirements. Partner with us today and experience the difference!</p>
-                        <button className="text-white my-4 bg-blue-900 flex items-center gap-4 py-3 px-5 rounded-lg">Learn More <span><BiSolidArrowFromLeft className="text-white"/></span></button>
+                        <p className="mb-4">We proudly serve a diverse range of healthcare organizations for their Revenue Cycle Management (RCM) and provider credentialing needs. Whether you’re a hospital, medical practice, healthcare facility, or billing company, our tailored solutions are designed to meet your unique requirements. Partner with us today and experience the difference!</p>
                     </div>
                 </div>
             </div>

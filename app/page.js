@@ -13,7 +13,6 @@ export default function Home() {
     backgroundImage: '/img/photo-1576091160399-112ba8d25d1d.avif',
     title: 'Get an Expert Assessment',
     description: 'Unlock the full potential of your medical practice. We understand the challenges you face in today\'s healthcare landscape, and we\'re here to help. Take the first step towards optimizing your medical practice today.',
-    link: '/expert-assessment',
   };
 
   const headingInfo = {
@@ -100,7 +99,6 @@ export default function Home() {
           backgroundImage={expertData.backgroundImage}
           title={expertData.title}
           description={expertData.description}
-          link={expertData.link}
         />
       </div>
     </div>

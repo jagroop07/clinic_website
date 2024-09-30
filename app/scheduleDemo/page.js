@@ -5,6 +5,7 @@ import { DemoForm } from "../_components/DemoForm";
 import { Solutions } from "../_components/Solutions";
 import { TrustedBy } from "../_components/TrustedBy";
 import { TrustedAndClients } from "../_components/TrustedAndClients";
+import Link from "next/link";
 
 export default function ScheduleDemo() {
     return (
@@ -29,15 +30,15 @@ export default function ScheduleDemo() {
                         </div>
                     </div>
                     <div className="flex gap-5 my-5">
-                        <div className="px-3 py-3 rounded-lg transition-all duration-800 ease-linear bg-gray-800 hover:bg-white hover:text-blue-950">
+                        <Link href={'/'} className="px-3 py-3 rounded-lg transition-all duration-800 ease-linear bg-gray-800 hover:bg-white hover:text-blue-950">
                             <FaFacebook className="text-2xl" />
-                        </div>
-                        <div className="px-3 py-3 rounded-lg transition-all duration-800 ease-linear bg-gray-800 hover:bg-white hover:text-blue-950">
+                        </Link>
+                        <Link href={'/'} className="px-3 py-3 rounded-lg transition-all duration-800 ease-linear bg-gray-800 hover:bg-white hover:text-blue-950">
                             <BsTwitter className="text-2xl" />
-                        </div>
-                        <div className="px-3 py-3 rounded-lg transition-all duration-800 ease-linear bg-gray-800 hover:bg-white hover:text-blue-950">
+                        </Link>
+                        <Link href={'/'} className="px-3 py-3 rounded-lg transition-all duration-800 ease-linear bg-gray-800 hover:bg-white hover:text-blue-950">
                             <BsLinkedin className="text-2xl" />
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="bg-white sm:p-7 p-3 rounded-lg">
