@@ -9,15 +9,16 @@ import toast from "react-hot-toast";
 
 export default function Solutions() {
     const [editable, setEditable] = useState([])
-    
+
     const fetchCaseStudies = async () => {
         try {
             const response = await axios.get('http://localhost:3000/api/blogs')
             const caseStudies = await response?.data?.caseStudy
-            const newEditable = [...editable]
-            caseStudies.map((item) => !newEditable.includes(item._id) && newEditable.push(item._id) )
+            let newEditable = [...editable]
+            newEditable = []
+            caseStudies.map((item) => !newEditable.includes(item._id) && newEditable.push(item._id))
             setEditable(newEditable)
-            reset({caseStudy: caseStudies})
+            reset({ caseStudy: caseStudies })
         } catch (error) {
             console.log(error.message)
         }
@@ -42,7 +43,7 @@ export default function Solutions() {
 
     useEffect(() => {
         fetchCaseStudies()
-    },[])
+    }, [])
 
     const { register, control, handleSubmit, setValue, watch, reset } = methods
 
@@ -51,9 +52,9 @@ export default function Solutions() {
         name: "caseStudy"
     })
 
-    const handleDelete = async(i) => {
+    const handleDelete = async (i) => {
         try {
-            await axios.delete('http://localhost:3000/api/blogs/'+editable[i])
+            await axios.delete('http://localhost:3000/api/blogs/' + editable[i])
             fetchCaseStudies()
             toast.error('Data Deleted')
         } catch (error) {
@@ -64,7 +65,7 @@ export default function Solutions() {
     const onsubmit = async (data, i) => {
         try {
             const caseStudy = await data.caseStudy[i]
-            if(editable[i]) {
+            if (editable[i]) {
                 await axios.patch(`http://localhost:3000/api/blogs/${editable[i]}`, caseStudy)
             }
             else {
@@ -99,12 +100,12 @@ export default function Solutions() {
                 </div>
                 {caseStudy.map((e, ind) => <form className="bg-white p-7 mt-7 md:w-[50%]" onSubmit={handleSubmit((data) => onsubmit(data, ind))}>
                     <div className="flex justify-end">
-                        {editable[ind]? <button type="button" onClick={() => handleDelete(ind)}>
+                        {editable[ind] ? <button type="button" onClick={() => handleDelete(ind)}>
                             <TbTrash className="text-2xl text-red-600" />
-                        </button>:
-                        <button type="button" onClick={() => removeStudy(ind)}>
-                        <TbTrash className="text-2xl text-red-600" />
-                    </button>}
+                        </button> :
+                            <button type="button" onClick={() => removeStudy(ind)}>
+                                <TbTrash className="text-2xl text-red-600" />
+                            </button>}
                     </div>
                     <div className="flex flex-col gap-3">
                         <label htmlFor="case_title" className="text-md font-semibold">Title</label>
@@ -120,8 +121,10 @@ export default function Solutions() {
                         <label htmlFor="case_description" className="text-md font-semibold">Description</label>
                         <input type="text" className="px-3 py-2 bg-green-50" {...register(`caseStudy[${ind}].case_description`)} />
                     </div>
-                    <SectionFieldArray i={ind} control={control} register={register} setValue={setValue} watch={watch}/>
-                    <button className="bg-blue-700 text-white font-semibold rounded-md my-4 px-6 py-3">{editable[ind]? "Update": "Submit"}</button>
+                    <div className="bg-gray-100 p-2 rounded-md mt-3">
+                        <SectionFieldArray i={ind} control={control} register={register} setValue={setValue} watch={watch} />
+                    </div>
+                    <button className="bg-blue-700 text-white font-semibold rounded-md my-4 px-6 py-3">{editable[ind] ? "Update" : "Submit"}</button>
                 </form>)}
             </div>
         </>
@@ -135,15 +138,15 @@ const SectionFieldArray = ({ control, i, register, setValue, watch }) => {
     })
 
     return (<>
-        <div className="flex justify-between items-center my-6">
+        <div className="flex justify-between items-center mb-5">
             <h1 className="text-xl font-semibold">Sections</h1>
             <button type="button" className="bg-blue-600 text-white font-semibold px-3 py-1 rounded-md" onClick={() => addSection({ section_title: '', section__description: '', section_image: '' })}>
                 +
             </button>
         </div>
         {
-            caseSection.map((e, index) => <div>
-                <div className="justify-end my-5 flex">
+            caseSection.map((e, index) => <div className="p-2 bg-gray-200 mt-2">
+                <div className="justify-end flex">
                     <button type="button" onClick={() => removeSection(index)}>
                         <TbTrash className="text-2xl text-red-600" />
                     </button>
