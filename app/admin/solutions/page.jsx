@@ -14,8 +14,7 @@ export default function Solutions() {
         try {
             const response = await axios.get('http://localhost:3000/api/solutions')
             const solutions = await response?.data?.solutions
-            let newEditable = [...editable]
-            newEditable = []
+            let newEditable = []
             solutions.map((item) => !newEditable.includes(item._id) && newEditable.push(item._id))
             setEditable(newEditable)
             reset({ solution: solutions })
@@ -126,22 +125,22 @@ export default function Solutions() {
                         <label htmlFor="solution_title" className="text-md font-semibold">Title</label>
                         <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].solution_title`)} />
                     </div>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col mt-4 gap-1">
                         <label htmlFor="solution_description" className="text-md font-semibold">Description</label>
                         <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].solution_description`)} />
                     </div>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col mt-4 gap-1">
                         <label htmlFor="button_text" className="text-md font-semibold">Button Text</label>
                         <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].button_text`)} />
                     </div>
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col mt-4 gap-1">
                         <label htmlFor="button_link" className="text-md font-semibold">Button Link</label>
                         <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].button_link`)} />
                     </div>
-                    <div>
+                    <div className="my-3 p-2 bg-gray-50">
                         <div className="flex flex-col gap-3">
                             <label htmlFor="solution_first.solution_title" className="text-md font-semibold">Title</label>
-                            <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].solution_first.solution_title`)} />
+                            <input type="text" className="px-3 border border-black py-2 bg-green-50" {...register(`solution[${ind}].solution_first.solution_title`)} />
                         </div>
                         <div className="my-3">
                             <FileInput
@@ -154,11 +153,11 @@ export default function Solutions() {
                         </div>
                         <div className="flex flex-col gap-3 mt-3">
                             <label htmlFor="solution_first.button_text" className="text-md font-semibold">Button Text</label>
-                            <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].solution_first.button_text`)} />
+                            <input type="text" className="px-3 py-2 border border-black bg-green-50" {...register(`solution[${ind}].solution_first.button_text`)} />
                         </div>
                         <div className="flex flex-col gap-3 mt-3">
                             <label htmlFor="solution_first.button_link" className="text-md font-semibold">Button Link</label>
-                            <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].solution_first.button_link`)} />
+                            <input type="text" className="px-3 py-2 border border-black bg-green-50" {...register(`solution[${ind}].solution_first.button_link`)} />
                         </div>
                     </div>
                     <div className="bg-gray-100 p-2 rounded-md mt-3">
@@ -213,7 +212,7 @@ const PointFieldArray = ({ control, i, register, setValue, watch }) => {
 
     return (
         <>
-            <div className="flex justify-between items-center mb-5 rounded-md">
+            <div className="flex justify-between items-center rounded-md">
                 <h1 className="text-xl font-semibold">Points</h1>
                 <button type="button" className="bg-blue-600 text-white font-semibold px-3 py-1 rounded-md" onClick={() => addPoints()}>
                     +
