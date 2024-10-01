@@ -15,7 +15,7 @@ export default function Solutions() {
             const response = await axios.get('http://localhost:3000/api/solutions')
             const solutions = await response?.data?.solutions
             let newEditable = []
-            solutions.map((item) => !newEditable.includes(item._id) && newEditable.push(item._id))
+            solutions.forEach((item) => !newEditable.includes(item._id) && newEditable.push(item._id))
             setEditable(newEditable)
             reset({ solution: solutions })
         } catch (error) {

@@ -15,7 +15,7 @@ export default function Solutions() {
             const response = await axios.get('http://localhost:3000/api/blogs')
             const caseStudies = await response?.data?.caseStudy
             let newEditable = []
-            caseStudies.map((item) => !newEditable.includes(item._id) && newEditable.push(item._id))
+            caseStudies.forEach((item) => !newEditable.includes(item._id) && newEditable.push(item._id))
             setEditable(newEditable)
             reset({ caseStudy: caseStudies })
         } catch (error) {

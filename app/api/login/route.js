@@ -49,7 +49,7 @@ export async function POST(req) {
 
         return res;
     } catch (error) {
-        console.log({ error });
+        console.log(error.message );
 
         return NextResponse.json({ status: "failed", message: "Something went wrong" }, { status: 500 });
     }

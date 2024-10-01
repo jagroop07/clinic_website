@@ -65,32 +65,26 @@ export default function Home() {
         <div>
           <Image src={'/img/service-1.png'} alt="..." height={600} width={800} />
           <h1 className="text-2xl font-semibold my-3">DME Suppliers</h1>
-          <Link href={'/'} className="my-2 flex text-sm text-blue-800">Learn more <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
         <div className="sm:mt-0 mt-7">
           <Image src={'/img/service-2.png'} alt="..." height={600} width={800} />
           <h1 className="text-2xl font-semibold my-3">Eye Care Providers</h1>
-          <Link href={'/'} className="my-2 flex text-sm text-blue-800">Learn more <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
         <div className="sm:mt-0 mt-7">
           <Image src={'/img/service-3.png'} alt="..." height={600} width={800} />
           <h1 className="text-2xl font-semibold my-3">EMR/EHR Software Providers</h1>
-          <Link href={'/'} className="my-2 flex text-sm text-blue-800">Learn more <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
         <div className="sm:mt-0 mt-7">
           <Image src={'/img/service-4.png'} alt="..." height={600} width={800} />
           <h1 className="text-2xl font-semibold my-3">Hospitals & Health Systems</h1>
-          <Link href={'/'} className="my-2 flex text-sm text-blue-800">Learn more <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
         <div className="sm:mt-0 mt-7">
           <Image src={'/img/service-5.png'} alt="..." height={600} width={800} />
           <h1 className="text-2xl font-semibold my-3">Specialist Physician Groups</h1>
-          <Link href={'/'} className="my-2 flex text-sm text-blue-800">Learn more <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
         <div className="sm:mt-0 mt-7">
           <Image src={'/img/service-6.png'} alt="..." height={600} width={800} />
           <h1 className="text-2xl font-semibold my-3">Medical Billing Service Providers</h1>
-          <Link href={'/'} className="my-2 flex text-sm text-blue-800">Learn more <span className="ms-2 mt-1"><FaArrowCircleRight /></span></Link>
         </div>
       </div>
         <TrustedBy/>

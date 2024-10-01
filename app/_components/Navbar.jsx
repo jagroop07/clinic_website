@@ -24,7 +24,7 @@ export default function Navbar() {
     setIsOpen(false);
   }, [pathname]);
   return (
-    !pathname.startsWith("/admin") && (
+    !pathname.startsWith("/admin") && pathname !== "/login" && (
       <nav className={` bg-white relative   shadow-xl z-50 w-full md:px-16 h-[70px]`}>
         <div className="container mx-auto px-2 2xl:px-0 h-full relative">
           <div className="flex items-center justify-between h-full">
