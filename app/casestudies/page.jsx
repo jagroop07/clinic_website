@@ -37,13 +37,16 @@ export default async function CaseStudiesPage() {
             className={`flex pt-3 flex-col ${index % 2 === 0 ? 'lg:flex-row-reverse' : 'lg:flex-row'} justify-center gap-x-16 align-middle`}
           >
             <div className='flex justify-center align-center'>
-              <Image 
-                className='lg:w-[500px] mt-7 sm:rounded-tl-[80px] sm:rounded-br-[80px] object-cover object-center' 
-                width={500} 
-                height={500} 
-                alt={e.case_title} 
-                src={e.case_coverImage}
-              />
+            <div className='h-[300px] w-[400px] overflow-hidden relative'>
+  <Image 
+    className='mt-7 sm:rounded-tl-[80px] sm:rounded-br-[80px] object-cover' 
+    alt={e.case_title} 
+    src={e.case_coverImage}
+    layout="fill" // Use layout "fill" to cover the entire parent container
+    objectFit="contain" // Maintains aspect ratio while covering the div
+    priority // Optional: to load the image faster if it's important
+  />
+</div>
             </div>
             <div className='content-center lg:w-[40%] lg:mt-0 mt-6'>
               <h1 className='font-black text-3xl'><span className='text-blue-900 mb-3'>Case Study :</span> <span className='border-b-0 font-semibold'>{e.case_title}</span></h1>

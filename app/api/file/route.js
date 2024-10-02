@@ -1,48 +1,24 @@
-import { promises as fs } from 'fs'
-import { NextResponse } from 'next/server'
-import path from 'path'
+import cloudinary from 'cloudinary';
+import { NextResponse } from 'next/server';
 
-const uploadDir = path.join(process.cwd(), '/public/uploads')
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
-const ifexistsUplaodDir = async () => {
-    try {
-        await fs.access(uploadDir)
-    } catch {
-        await fs.mkdir(uploadDir, { recursive: true })
-    }
+export async function POST(req) {
+  try {
+    const body = await req.json(); // Parse the incoming request body as JSON
+    const fileStr = body.base64; // Get the base64 image string from the client-side
+
+    const uploadResponse = await cloudinary.uploader.upload(fileStr, {
+      upload_preset: 'your_upload_preset', // Replace with your Cloudinary upload preset
+    });
+
+    return NextResponse.json({ url: uploadResponse.secure_url }); // Return the image URL
+  } catch (error) {
+    console.error('Error uploading image:', error);
+    return NextResponse.json({ error: 'Something went wrong!' }, { status: 500 });
+  }
 }
-
-const config = {
-    api: {
-        bodyParser: false
-    }
-}
-
-export const POST = async (req) => {
-    try {
-        await ifexistsUplaodDir()
-
-        const formData = await req.formData()
-        const file = formData.get('file')
-
-        if (!file || !file.name) {
-            return NextResponse.json("file not uploaded")
-        }
-
-        const extension = path.extname(file.name)
-        const uniquefile = Date.now() + extension
-
-        const filepath = path.join(uploadDir, uniquefile)
-
-        const buffer = Buffer.from(await file.arrayBuffer())
-        await fs.writeFile(filepath, buffer)
-
-        const fileUrl = new URL(`/uploads/${uniquefile}`, `http://${req.headers.get('host')}`).href
-
-        return NextResponse.json({ message: "success", detials: { publicPath: fileUrl, format: extension} })
-    } catch (error) {
-        return NextResponse.json({ message: error.message })
-    }
-}
-
-export { config }
