@@ -33,7 +33,7 @@ export const Footer = () => {
   
   return (
     !pathname.startsWith("/admin") && pathname !== "/login" && (
-      <div className="bg-[#004366] sm:px-10 px-2 2xl:px-0 pt-14 pb-7">
+      <div className="bg-[#004366] sm:px-10 px-2 2xl:px-10 pt-14 pb-7">
         <div className="2xl:container 2xl:mx-auto grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-5">
           <div className="lg:col-span-2">
             <div className="flex mb-8 gap-5 items-center">
