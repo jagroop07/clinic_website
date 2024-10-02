@@ -24,7 +24,6 @@ const page = () => {
     const onSubmit = async (data) => {
         try {
             const response = await axios.post('/api/login', data)
-            console.log({ response })
             if (response.data.status == "success") {
                 toast.success('Login Successfull', {
                     position: "top-right",

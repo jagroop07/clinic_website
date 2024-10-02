@@ -3,20 +3,21 @@ import Heading from "@/app/_components/Heading";
 import Image from "next/image";
 import { AwardsandReco } from "@/app/_components/AwardsandReco";
 import { WhoWeAssist } from "@/app/_components/WhoWeAssist";
-import { getCaseStudy } from "@/backend/controllers/blogs";
 
-let data = null
+// let data = null
 
-const getData = async (id) => {
-
-  if(data) return data;
-
-  data = await getCaseStudy(id);
-  return data;
+async function getCaseStudy(id) {
+  try {
+    const response = await axios.get(`http://localhost:3000/api/blogs/`+id);
+    return response.data.singleCase; // Adjust according to your API structure
+  } catch (error) {
+    console.error('Error fetching case study:', error);
+    throw new Error('Failed to fetch case study');
+  }
 }
 
 export const generateMetadata = async ({ params: {id} }) => {
-  const caseStudy = await getData(id);
+  const caseStudy = await getCaseStudy(id); 
 
   return {
     title: caseStudy.case_title,
@@ -24,7 +25,7 @@ export const generateMetadata = async ({ params: {id} }) => {
 };
 
 const LoadingComponent = async ({ params }) => {
-  const caseStudy = await getData(params.id);
+  const caseStudy = await getCaseStudy(params.id);
 
   return (
     caseStudy && (

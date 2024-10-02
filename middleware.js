@@ -57,7 +57,6 @@ export function middleware(request) {
 
   const authToken = cookies.find((cookie) => cookie.name === "admin_token");
 
-  console.log({ authToken, isAdminPage });
   if (isAdminPage && !authToken) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
