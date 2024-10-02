@@ -29,10 +29,10 @@ const OurSolutions = async() => {
         
        
         {solutions?.map((e,i)=><div key={i} className={`md:flex justify-center ${i%2==0?"flex-row-reverse":""} gap-5 align-middle`}>
-            <div className='flex justify-center align-center'><Image className='md:w-[500px] mt-7' width={500} height={500} alt='...' src={e.solution_first?.solution_image}/></div>
+            <div className='flex justify-center align-center'><Image className='md:w-[500px] mt-7 object-cover object-center' width={500} height={500} alt='...' src={e.solution_first?.solution_image}/></div>
             <div className='content-center md:w-[40%]'>
                 <div className='flex '>
-                    <div> <MdPayment className='text-4xl text-white bg-blue-600 p-1 rounded-xl'/ ></div>
+                    <div> <MdPayment className='text-4xl text-white bg-blue-600 p-1 rounded-xl'/></div>
                    <p className='font-bold text-xl  ms-6 content-center'>
 {e.solution_first.solution_title}
 </p></div>

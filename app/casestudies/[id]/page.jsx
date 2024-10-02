@@ -63,7 +63,7 @@ const LoadingComponent = async ({ params }) => {
               </div>
               <div className="flex justify-center align-center">
                 <Image
-                  className="lg:w-[500px] mt-7"
+                  className="lg:w-[500px] mt-7 object-cover object-center"
                   width={500}
                   height={500}
                   alt={e.section_title}

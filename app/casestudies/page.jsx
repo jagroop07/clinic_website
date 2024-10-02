@@ -38,7 +38,7 @@ export default async function CaseStudiesPage() {
           >
             <div className='flex justify-center align-center'>
               <Image 
-                className='lg:w-[500px] mt-7 sm:rounded-tl-[80px] sm:rounded-br-[80px]' 
+                className='lg:w-[500px] mt-7 sm:rounded-tl-[80px] sm:rounded-br-[80px] object-cover object-center' 
                 width={500} 
                 height={500} 
                 alt={e.case_title} 

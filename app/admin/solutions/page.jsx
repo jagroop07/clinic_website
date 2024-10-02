@@ -90,7 +90,7 @@ export default function Solutions() {
         <>
             <div className="relative">
                 <div className="flex gap-5 justify-end sticky top-[70px]">
-                    <button className="bg-blue-800 text-white rounded-xl px-4 py-2" onClick={() => addSolution({
+                    <button className="bg-blue-800 text-white rounded-xl px-4 py-2" onClick={() => {addSolution({
                         solution_title: '',
                         solution_description: '',
                         button_text: '',
@@ -108,7 +108,11 @@ export default function Solutions() {
                                 section_description: '',
                             }
                         ]
-                    })}>
+                    })
+                    toast.success("form added ")
+                }
+                    
+                    }>
                         Add
                     </button>
                 </div>
