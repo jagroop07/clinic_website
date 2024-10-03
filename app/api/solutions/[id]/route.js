@@ -76,7 +76,7 @@ export const PATCH = async(req, {params}) => {
             return NextResponse.json({status: 404, message: "id is missing"})
         }
 
-        const updateInfo = await CaseStudy.findByIdAndUpdate(id, solutionUpdate, {new: true})
+        const updateInfo = await Solutions.findByIdAndUpdate(id, solutionUpdate, {new: true})
 
         if(!updateInfo){
             return NextResponse.json({status: 404, message: "no feedback"})

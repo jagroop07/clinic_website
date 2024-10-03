@@ -5,6 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 import { BiPencil } from "react-icons/bi";
 import { TbTrash } from "react-icons/tb";
+import Image from "next/image";
 
 export const FileInput = ({ name, watch, setValue }) => {
   const image = watch(name);
@@ -24,7 +25,7 @@ export const FileInput = ({ name, watch, setValue }) => {
     try {
       // Convert file to base64 to send to the server
       const base64 = await convertToBase64(file);
-      
+
       // Send the image to the API route
       const response = await axios.post("/api/file", { base64 });
 
@@ -51,6 +52,7 @@ export const FileInput = ({ name, watch, setValue }) => {
 
   return (
     <>
+    {!loading ? <div>
       {image ? (
         image.split(".")[1] === "pdf" ? (
           <div className="w-[200px] h-[150px] flex justify-center items-center font-semibold rounded-md hover:bg-gray-400 bg-gray-300">
@@ -79,7 +81,10 @@ export const FileInput = ({ name, watch, setValue }) => {
       )}
 
       <input hidden type="file" id={`image-${name}`} onChange={handleUpload} />
-      {loading && <p>Uploading...</p>}
+    </div> : <div className="w-[200px] h-[150px] flex flex-col justify-center items-center font-semibold rounded-md bg-[#edeef0]">
+        <Image src={'/img/giphy (1).webp'} height={90} width={90} alt="..."/>
+        <p className="font-semibold text-sm">Uploading...</p>
+      </div>}
     </>
   );
 };

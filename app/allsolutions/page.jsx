@@ -14,26 +14,26 @@ const page = () => {
   };
   return (
     <>
-    <div>
-      <div className='bg-blue-50'>
-        <Heading heading="	
-Comprehensive Revenue Cycle Management" subheading={"We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing."} link={"/"} linktext={"contact us"} imagelink="/img/hero-image-1536x1159.png"/>
+      <div>
+        <div className='bg-blue-50'>
+          <Heading heading="	
+Comprehensive Revenue Cycle Management" subheading={"We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing."} link={"/"} linktext={"contact us"} imagelink="/img/hero-image-1536x1159.png" />
+        </div>
+        <div className='2xl:container 2xl:mx-auto'>
+          <OurSolutions />
+          <div className='sm:px-6'>
+            <Revenuecycle />
+          </div>
+          <AwardsandReco />
+          <GetanExpert
+            backgroundImage={expertData.backgroundImage}
+            title={expertData.title}
+            description={expertData.description}
+            link={expertData.link}
+          />
+        </div>
       </div>
-      <div className='2xl:container 2xl:mx-auto'>
-      <OurSolutions/>
-      <div className='sm:px-6'>
-        <Revenuecycle/>
-      </div>
-      <AwardsandReco/>
-      <GetanExpert 
-          backgroundImage={expertData.backgroundImage} 
-          title={expertData.title} 
-          description={expertData.description} 
-          link={expertData.link} 
-        />
-      </div>
-    </div>
-  
+
     </>
   )
 }
