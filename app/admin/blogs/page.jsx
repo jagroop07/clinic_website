@@ -120,7 +120,7 @@ export default function Solutions() {
                     </div>
                     <div className="flex flex-col gap-3">
                         <label htmlFor="case_description" className="text-md font-semibold">Description</label>
-                        <input type="text" className="px-3 py-2 bg-green-50" {...register(`caseStudy[${ind}].case_description`)} />
+                        <textarea className="px-3 py-2 bg-green-50 h-28" {...register(`caseStudy[${ind}].case_description`)} />
                     </div>
                     <div className="bg-gray-100 p-2 rounded-md mt-3">
                         <SectionFieldArray i={ind} control={control} register={register} setValue={setValue} watch={watch} />
@@ -164,7 +164,7 @@ const SectionFieldArray = ({ control, i, register, setValue, watch }) => {
                 </div>
                 <div className="flex flex-col gap-3">
                     <label htmlFor="section_description" className="text-md font-semibold">Description</label>
-                    <input type="text" className="px-3 py-2 bg-green-50" {...register(`caseStudy[${i}].case_section[${index}].section_description`)} />
+                    <textarea className="px-3 py-2 bg-green-50 h-28" {...register(`caseStudy[${i}].case_section[${index}].section_description`)} />
                 </div>
             </div>)
         }

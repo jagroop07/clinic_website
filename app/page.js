@@ -1,4 +1,4 @@
-import { FaArrowCircleRight } from "react-icons/fa";
+import { FaArrowAltCircleRight, FaArrowCircleRight } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import GetanExpert from "./_components/GetanExpert";
@@ -15,20 +15,25 @@ export default function Home() {
     description: 'Unlock the full potential of your medical practice. We understand the challenges you face in today\'s healthcare landscape, and we\'re here to help. Take the first step towards optimizing your medical practice today.',
   };
 
-  const headingInfo = {
-    heading: "Medical Billing Solutions for Healthcare Providers",
-    subheading: "We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing.",
-    link: '/scheduleDemo',
-    linktext: 'Schedule a Demo',
-    imagelink: '/img/Baner-Image-1000px.webp'
-  }
-
   return (<>
     <div className="bg-blue-50">
-      <Heading heading={headingInfo.heading} subheading={headingInfo.subheading} link={headingInfo.link} linktext={headingInfo.linktext} imagelink={headingInfo.imagelink}/>
+      <div className="md:flex gap-4 py-8 md:px-10  2xl:container 2xl:mx-auto">
+        <div className="content-center sm:px-8 px-3">
+          <h1 className="text-4xl font-bold mt-10 mb-6">
+            Medical Billing Solutions for Healthcare Providers
+          </h1>
+          <p className="pb-4 text-xl text-gray-700">We provide comprehensive technical and staffing solutions for streamlined revenue cycle management and credentialing.</p>
+          <div className='flex'>
+            <Link href='/scheduleDemo' className="bg-blue-900 mt-2 py-2 px-6 flex gap-2 rounded-lg text-white">Schedule a Demo<span className="ms-2 mt-1"><FaArrowAltCircleRight /></span></Link>
+          </div>
+        </div>
+        <div className="md:mt-0 flex justify-center md:content-center mt-8">
+          <Image src='/img/Baner-Image-1000px.webp' alt="..." height={1100} width={1100} />
+        </div>
+      </div>
     </div>
     <div className="2xl:container 2xl:mx-auto">
-      <TrustedAndClients/>
+      <TrustedAndClients />
       <div className="md:flex py-10 sm:px-6 px-3">
         <div className="sm:p-6 p-1 md:max-w-[30%]">
           <h5 className="text-base font-semibold text-red-600">Knack Global</h5>
@@ -59,8 +64,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Solutions/>
-      <WhoWeAssist/>
+      <Solutions />
+      <WhoWeAssist />
       <div className="grid sm:grid-cols-3 sm:gap-8 px-6 py-4">
         <div>
           <Image src={'/img/service-1.png'} alt="..." height={600} width={800} />
@@ -87,7 +92,7 @@ export default function Home() {
           <h1 className="text-2xl font-semibold my-3">Medical Billing Service Providers</h1>
         </div>
       </div>
-        <TrustedBy/>
+      <TrustedBy />
       <div>
         <GetanExpert
           backgroundImage={expertData.backgroundImage}

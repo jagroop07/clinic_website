@@ -5,7 +5,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
+import { Trash2 } from 'lucide-react';
 
 export default function ContactPage() {
     const [rows, setrows] = useState([])
@@ -67,14 +68,13 @@ export default function ContactPage() {
             headerName: 'Action',
             renderCell: ({row}) => (
                 <strong>
-                    <Button
+                    <IconButton
                         variant="contained"
                         onClick={() => handleDelete(row.id)}
                         size="small"
-                        style={{ backgroundColor: 'red', boxShadow: 'none', fontWeight: 'bold' }}
                     >
-                        Delete
-                    </Button>
+                        <Trash2 className='text-red-700'/>
+                    </IconButton>
                 </strong>
             )
     

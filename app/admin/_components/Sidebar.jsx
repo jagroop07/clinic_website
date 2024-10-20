@@ -23,6 +23,13 @@ import { usePathname } from 'next/navigation';
 
 const drawerWidth = 240;
 
+const adminRoutes = [
+  { text: 'Contacts', link: '/admin/contact', icon: <ContactPhoneRounded /> },
+  { text: 'Scheduled Demos', link: "/admin/scheduleDemo", icon: <DeveloperModeRounded /> },
+  { text: 'Solutions', link: "/admin/solutions", icon: <CastForEducationSharp /> },
+  { text: 'Case Studies', link: "/admin/blogs", icon: <CasesOutlined /> }
+]
+
 const openedMixin = (theme) => ({
   width: drawerWidth,
   transition: theme.transitions.create('width', {
@@ -101,7 +108,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-export default function Sidebar({children}) {
+export default function Sidebar({ children }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const pathname = usePathname()
@@ -117,7 +124,7 @@ export default function Sidebar({children}) {
   return (
     <Box sx={{ display: 'flex', backgroundColor: '#f2f4f5' }}>
       <CssBaseline />
-      <AppBar position="fixed" style={{backgroundColor: '#241370'}} open={open}>
+      <AppBar position="fixed" style={{ backgroundColor: '#0d82bd' }} open={open}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -145,10 +152,10 @@ export default function Sidebar({children}) {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
-          {[{text: 'Contacts', link: '/admin/contact', icon: <ContactPhoneRounded/>}, {text:'Scheduled Demos', link: "/admin/scheduleDemo", icon: <DeveloperModeRounded/>}, {text: 'Solutions', link: "/admin/solutions", icon: <CastForEducationSharp/>}, {text: 'Case Studies',link: "/admin/blogs", icon: <CasesOutlined/>}].map((item, index) => (
+        <List sx={{ backgroundColor: '#0d82bd', color: '#fafafa', paddingX: '10px'}}>
+          {adminRoutes.map((item, index) => (
             <ListItem key={item.text} disablePadding sx={{ display: 'block' }}>
-              <Link className={`${pathname === item.link? 'bg-blue-100 text-blue-800': ''} flex py-6 px-5`} href={item.link}
+              <Link className={`${pathname === item.link ? 'bg-white text-[#0d82bd] rounded-2xl' : ''} flex py-2 my-4 px-[10px]`} href={item.link}
                 sx={[
                   {
                     minHeight: 48,
@@ -156,11 +163,11 @@ export default function Sidebar({children}) {
                   },
                   open
                     ? {
-                        justifyContent: 'initial',
-                      }
+                      justifyContent: 'initial',
+                    }
                     : {
-                        justifyContent: 'center',
-                      },
+                      justifyContent: 'center',
+                    },
                 ]}
               >
                 <ListItemIcon
@@ -168,28 +175,37 @@ export default function Sidebar({children}) {
                     {
                       minWidth: 0,
                       marginInline: 'auto',
+                      color: '#fafafa',
                     },
                     open
                       ? {
-                          mr: 3,
-                        }
+                        mr: 3,
+                        pt: 0.5
+                      }
                       : {
-                          mr: 'auto',
-                        },
+                        mr: 'auto',
+                        pt: 0.5
+                      },
+                      pathname === item.link && {
+                        color: '#0d82bd'
+                      }
                   ]}
                 >
-                    {item.icon}
+                  {item.icon}
                 </ListItemIcon>
                 <ListItemText
                   primary={item.text}
                   sx={[
+                    {
+                      fontWeight: 900
+                    },
                     open
                       ? {
-                          opacity: 1,
-                        }
+                        opacity: 1,
+                      }
                       : {
-                          opacity: 0,
-                        },
+                        opacity: 0,
+                      },
                   ]}
                 />
               </Link>

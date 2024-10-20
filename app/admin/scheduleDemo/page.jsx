@@ -5,12 +5,13 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
+import { Trash2 } from 'lucide-react';
 
 export default function DemoPage() {
     const [rows, setrows] = useState([])
 
-    const fetchData = async() => {
+    const fetchData = async () => {
         const { data } = await axios.get('http://localhost:3000/api/demo')
         setrows(data.demoInfo.map(d => ({ ...d, id: d?._id, })))
     }
@@ -18,13 +19,13 @@ export default function DemoPage() {
     useEffect(() => {
         fetchData()
     }, [])
-    
+
     async function handleDelete(id) {
-        const {data} = await axios.delete('http://localhost:3000/api/demo/'+ id)
+        const { data } = await axios.delete('http://localhost:3000/api/demo/' + id)
         const newRows = rows.filter(item => item.id !== data.demoDeleted._id)
         setrows(newRows)
     }
-    
+
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         {
@@ -86,19 +87,19 @@ export default function DemoPage() {
         },
         {
             headerName: 'Action',
-            renderCell: ({row}) => (
+            renderCell: ({ row }) => (
                 <strong>
-                    <Button
+                    <IconButton
                         variant="contained"
                         onClick={() => handleDelete(row.id)}
                         size="small"
-                        style={{ backgroundColor: 'red', boxShadow: 'none', fontWeight: 'bold' }}
                     >
-                        Delete
-                    </Button>
+                        <Trash2 className='text-red-700' />
+
+                    </IconButton>
                 </strong>
             )
-    
+
         }
     ];
     return (

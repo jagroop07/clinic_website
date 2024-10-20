@@ -131,7 +131,7 @@ export default function Solutions() {
                     </div>
                     <div className="flex flex-col mt-4 gap-1">
                         <label htmlFor="solution_description" className="text-md font-semibold">Description</label>
-                        <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${ind}].solution_description`)} />
+                        <textarea className="px-3 py-2 bg-green-50 h-28" {...register(`solution[${ind}].solution_description`)} />
                     </div>
                     <div className="flex flex-col mt-4 gap-1">
                         <label htmlFor="button_text" className="text-md font-semibold">Button Text</label>
@@ -200,7 +200,7 @@ const SectionFieldArray = ({ control, i, register, setValue, watch }) => {
                 </div>
                 <div className="flex flex-col mt-2 gap-2">
                     <label htmlFor="section_description" className="text-md font-semibold">Description</label>
-                    <input type="text" className="px-3 py-2 bg-green-50" {...register(`solution[${i}].solution_section[${index}].section_description`)} />
+                    <textarea className="px-3 py-2 bg-green-50 h-28" {...register(`solution[${i}].solution_section[${index}].section_description`)} />
                 </div>
             </div>)
         }

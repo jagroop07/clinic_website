@@ -27,7 +27,7 @@ const page = async ({ params }) => {
               linktext={solution?.button_text}
             />{" "}
           </div>
-          <div className="2xl:container 2xl:mx-auto"><Solution
+          <div className="2xl:container 2xl:mx-auto py-12"><Solution
             buttonlink={solution?.solution_first.button_link}
             buttontext={solution?.solution_first.button_text}
             heading={solution?.solution_first.solution_title}
@@ -44,8 +44,10 @@ const page = async ({ params }) => {
           </div>
           </div>
           {/* <GetanExpert/> */}
+          <div className="2xl:container 2xl:mx-auto">
           <AwardsandReco/>
           <WhoWeAssist/>
+          </div>
         </>
       }
 
