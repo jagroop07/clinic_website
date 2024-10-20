@@ -8,7 +8,7 @@ import { WhoWeAssist } from "@/app/_components/WhoWeAssist";
 
 async function getCaseStudy(id) {
   try {
-    const response = await axios.get(`http://localhost:3000/api/blogs/`+id);
+    const response = await axios.get(`http://localhost:3000/api/blogs/` + id);
     return response.data.singleCase; // Adjust according to your API structure
   } catch (error) {
     console.error('Error fetching case study:', error);
@@ -16,8 +16,8 @@ async function getCaseStudy(id) {
   }
 }
 
-export const generateMetadata = async ({ params: {id} }) => {
-  const caseStudy = await getCaseStudy(id); 
+export const generateMetadata = async ({ params: { id } }) => {
+  const caseStudy = await getCaseStudy(id);
 
   return {
     title: caseStudy.case_title,
@@ -51,9 +51,8 @@ const LoadingComponent = async ({ params }) => {
           {caseStudy.case_section.map((e, index) => (
             <div
               key={e._id}
-              className={`flex flex-col ${
-                index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
-              } justify-center gap-x-24 align-middle`}
+              className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row-reverse" : "lg:flex-row"
+                } justify-center gap-x-24 align-middle`}
             >
               <div className="content-center lg:text-start text-center lg:w-[40%]">
                 <h1 className="font-black underline underline-offset-8  text-blue-900 text-3xl">
@@ -73,8 +72,10 @@ const LoadingComponent = async ({ params }) => {
             </div>
           ))}
         </div>
-        <AwardsandReco color={"bg-gray-100"} />
-        <WhoWeAssist />{" "}
+        <div className="2xl:container 2xl:mx-auto">
+          <AwardsandReco color={"bg-gray-100"} />
+          <WhoWeAssist />{" "}
+        </div>
       </>
     )
   );

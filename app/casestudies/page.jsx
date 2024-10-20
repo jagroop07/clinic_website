@@ -60,8 +60,10 @@ export default async function CaseStudiesPage() {
           </div>
         ))}
       </div>
-      <AwardsandReco />
-      <WhoWeAssist />
+      <div className="2xl:container 2xl:mx-auto">
+        <AwardsandReco />
+        <WhoWeAssist />
+      </div>
     </>
   );
 }
